@@ -13,6 +13,11 @@ export const TestView = () =>
         setTestIndex((prev) => prev + 1);
     };
 
+    const handleReloadClick = () =>
+    {
+        window.location.reload();
+    }
+
     const currentTest = TEST_ITEMS[testIndex];
 
     if (!currentTest)
@@ -22,6 +27,7 @@ export const TestView = () =>
                 <p>Тест завершен!</p>
                 <img src={gif} alt="" />
                 <span>{`По результатам теста Вы на 10000008327496314092392167321% котёнок <3`}</span>
+                <button className={cls.button} onClick={handleReloadClick}>Пройти заново</button>
             </div>
         ) 
     }
